@@ -1,6 +1,6 @@
 function ListGroup() {
   let item = ["Shakil", "Dilshad", "Nishar", "John Doe", "Super Man"];
-  item = [];
+  //   item = [];
 
   //Method 1
   //   if (item.length === 0)
@@ -30,8 +30,12 @@ function ListGroup() {
       {item.length === 0 && <p> No data found. </p>}
 
       <ul className="list-group">
-        {item.map((item) => (
-          <li className="list-group-item" key={item}>
+        {item.map((item, index) => (
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={(event) => console.log(index, "Clicked", item, event)}
+          >
             {item}
           </li>
         ))}
