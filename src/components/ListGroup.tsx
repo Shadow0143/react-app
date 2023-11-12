@@ -1,11 +1,13 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 function ListGroup() {
   let item = ["Shakil", "Dilshad", "Nishar", "John Doe", "Super Man"];
   //   item = [];
+  // const selectedIndex
 
-  //An Event Handler
-  const handleClick = (event: MouseEvent) => console.log("Clicked", event);
+  //Hooks
+
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   //Method 1
   //   if (item.length === 0)
@@ -36,7 +38,17 @@ function ListGroup() {
 
       <ul className="list-group">
         {item.map((item, index) => (
-          <li className="list-group-item" key={item} onClick={handleClick}>
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
+          >
             {item}
           </li>
         ))}
