@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let item = ["Shakil", "Dilshad", "Nishar", "John Doe", "Super Man"];
+interface Props {
+  item: string[];
+  heading: string;
+}
+
+function ListGroup({ item, heading }: Props) {
+  // let item = ["Shakil", "Dilshad", "Nishar", "John Doe", "Super Man"];
   //   item = [];
   // const selectedIndex
 
@@ -26,7 +31,7 @@ function ListGroup() {
   //   }
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {/* Method 2 Use Ternari operator instead of method 1 */}
       {/* {item.length === 0 ? <p> No data found. </p> : null} */}
 
